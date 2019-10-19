@@ -1,0 +1,26 @@
+version: '2'
+services:
+  app:
+    build: ./
+    image: adchavesm:chats
+    #working_dir: /home/node/app
+    #user: node
+    #environment:
+    #  MONGO_URL: mongodb://mongo:27017/crud-mongo
+    volumes:
+      - /home/node/app/node_modules
+      - .:/home/node/app
+    ports:
+      - 3020:3020
+    #command: ./wait-for-it mongo:27017 -- npm start
+  mongo:
+    image: mongo:3.6
+    restart: always
+    ports:
+      - 27016:27016
+    volumes:
+      - db_data:/data/db
+    command: mongod --noauth --smallfiles
+  
+volumes:
+  db_data:
