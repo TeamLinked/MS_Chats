@@ -1,6 +1,6 @@
 FROM node
 
-ENV MONGO_URL=mongodb://mongo:27016/crud-mongo PORT=3020 WAIT_FOR=MONGO:27016
+ENV MONGO_URL=mongodb://mongo:27016/crud-mongo PORT=3020 WAIT_FOR=MONGO:27017
 
 ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /wait-for-it
 
