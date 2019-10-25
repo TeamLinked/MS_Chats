@@ -11,7 +11,7 @@ const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/crud-mongo
 
 //connecting to db
 const run= async()=>{
-    await mongoose.connect('mongodb://localhost:27017/crud-mongo')
+    await mongoose.connect(MONGO_URL)
    .then(db=> console.log('connecting to db'))
    .catch(err=> console.log(err))
    

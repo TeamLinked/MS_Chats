@@ -17,7 +17,7 @@ services:
     image: mongo:3.6
     restart: always
     ports:
-      - 27016:27016
+      - 27017:27017
     volumes:
       - db_data:/data/db
     command: mongod --noauth --smallfiles
